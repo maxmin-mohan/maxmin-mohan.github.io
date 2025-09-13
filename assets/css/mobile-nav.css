@@ -1,0 +1,48 @@
+/* Navigation mobile styles */
+@media (max-width: 768px) {
+  #tubelight-nav-container {
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    top: auto !important;
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+    backdrop-filter: blur(12px);
+  }
+
+  #tubelight-nav-container #nav-wrapper {
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+  }
+
+  #tubelight-nav-container .nav-item {
+    flex-direction: column;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  #tubelight-nav-container .nav-item span {
+    font-size: 0.625rem;
+  }
+
+  #lamp {
+    display: none;
+  }
+
+  .nav-item.active {
+    background: rgba(168, 85, 247, 0.1);
+  }
+}
+
+/* Ensure no overlap with bottom nav on mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 5rem;
+  }
+
+  .cta-section {
+    margin-bottom: 5rem;
+  }
+}

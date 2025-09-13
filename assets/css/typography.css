@@ -1,0 +1,70 @@
+/* Remove text shadows and modernize typography */
+
+/* Reset any text shadows */
+h1, h2, h3, h4, h5, h6, p, span, a, div {
+    text-shadow: none !important;
+}
+
+/* Modern typography styles */
+h1 {
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+h2 {
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero-subtitle {
+    font-weight: 600;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    opacity: 0.9;
+}
+
+.section-title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Enhance contrast and readability */
+.text-white\/60 {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.text-white\/80 {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Clean, modern link styles */
+a {
+    text-decoration: none;
+}
+
+/* Navigation items */
+.nav-item {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* Card and content text */
+.video-info h3 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.video-info p {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Services section */
+.service-card h3 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
