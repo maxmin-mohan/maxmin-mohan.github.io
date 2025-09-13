@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohan Kumar - Professional Video Editor</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/orbital-hero.css">
+    <link rel="stylesheet" href="assets/css/carousel.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/mobile-nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/mobile-nav.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+
+        .text-ali {
+            color: #8B5CF6; /* A purple tone for consistency with the original design */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes ping {
+            75%, 100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .animate-ping {
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        
+        .bg-skin-base {
+          background-color: #1a1a1a;
+        }
+
+        /* Enhanced Tubelight Navbar Styles */
+        #tubelight-nav-container {
+            --nav-primary-color: #a855f7; /* purple-500 */
+            --nav-primary-glow-1: rgba(168, 85, 247, 0.2);
+            --nav-primary-glow-2: rgba(168, 85, 247, 0.15);
+            --nav-primary-glow-3: rgba(168, 85, 247, 0.1);
+            --nav-text-color: #a0a0a0;
+            --nav-text-hover: #ffffff;
+            --nav-bg: rgba(0, 0, 0, 0.8);
+            --nav-border: rgba(255, 255, 255, 0.2);
+            --nav-active-bg: rgba(168, 85, 247, 0.1);
+            --nav-active-text: #ffffff;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        #tubelight-nav-container nav {
+            z-index: 1000;
+        }
+
+        #lamp {
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(to right, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2), rgba(20, 184, 166, 0.2));
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    
+    <!-- Enhanced Tubelight Navigation -->
+    <nav id="tubelight-nav-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100]">
+        <div id="nav-wrapper" class="relative flex items-center gap-2 border rounded-full shadow-lg p-1.5 px-2" style="background-color: var(--nav-bg); border-color: var(--nav-border);">
+            <div id="lamp" class="absolute inset-0 h-full rounded-full -z-10">
+                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full" style="background: linear-gradient(to right, #a855f7, #3b82f6, #14b8a6);">
+                    <div class="absolute w-12 h-6 rounded-full -top-2 -left-2" style="background-color: var(--nav-primary-glow-1); filter: blur(12px);"></div>
+                    <div class="absolute w-8 h-6 rounded-full -top-1" style="background-color: var(--nav-primary-glow-2); filter: blur(8px);"></div>
+                    <div class="absolute w-4 h-4 rounded-full top-0 left-2" style="background-color: var(--nav-primary-glow-3); filter: blur(4px);"></div>
+                </div>
+            </div>
+            <a href="#home" class="nav-item active px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Home">
+                <i data-lucide="home" class="w-4 h-4"></i>
+                <span>Home</span>
+            </a>
+            <a href="portfolio.html" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Portfolio">
+                <i data-lucide="briefcase" class="w-4 h-4"></i>
+                <span>Portfolio</span>
+            </a>
+            <a href="#services" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Services">
+                <i data-lucide="wrench" class="w-4 h-4"></i>
+                <span>Services</span>
+            </a>
+            <a href="#contact" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Contact">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Split Hero Section with Orbital Design -->
+    <section id="home" class="hero relative overflow-hidden bg-black">
+        <div class="relative z-10 w-full h-screen flex items-center">
+            <!-- Left Side - Text Content -->
+            <div class="w-1/2 pl-20">
+                <div class="max-w-xl">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+                        Hello, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500">Mohan Kumar</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-medium text-white/80 mb-6">Professional Video Editor</h2>
+                    <p class="text-lg text-white/60 mb-8">
+                        Crafting cinematic stories through professional video editing.
+                        Specializing in weddings, events, and special occasions with
+                        a passion for visual storytelling.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="portfolio.html" class="inline-flex h-12 items-center justify-center rounded-md bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500 px-8 text-lg font-medium text-white shadow-lg shadow-purple-500/20 transition-all hover:scale-105">
+                            View Portfolio
+                        </a>
+                        <a href="#contact" class="inline-flex h-12 items-center justify-center rounded-md border border-white/20 bg-white/5 px-8 text-lg font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10">
+                            Contact Me
+                        </a>
+                    </div>
+                    <!-- Software Skills -->
+                    <div class="mt-12">
+                        <p class="text-white/40 text-sm mb-4">My Skills Set!</p>
+                        <div class="flex gap-6 items-center">
+                            <div class="software-icon" title="Adobe Premiere Pro">
+                                <img src="https://www.adobe.com/content/dam/acom/one-console/icons_rebrand/pr_appicon.svg" alt="Premiere Pro" class="w-10 h-10 hover:scale-110 transition-transform" />
+                            </div>
+                            <div class="software-icon" title="Adobe After Effects">
+                                <img src="https://www.adobe.com/content/dam/cc/us/en/products/ccoverview/ae_cc_app_RGB.svg" alt="After Effects" class="w-10 h-10 hover:scale-110 transition-transform" />
+                            </div>
+                            <div class="software-icon" title="Adobe Photoshop">
+                                <img src="https://www.adobe.com/content/dam/acom/one-console/icons_rebrand/ps_appicon.svg" alt="Photoshop" class="w-10 h-10 hover:scale-110 transition-transform" />
+                            </div>
+                            <div class="software-icon" title="DaVinci Resolve">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" alt="DaVinci Resolve" class="w-10 h-10 hover:scale-110 transition-transform" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Orbital Design -->
+            <div class="w-1/2 relative h-full flex items-center justify-center">
+                <div class="relative">
+                    <!-- Center Orbital -->
+                    <div class="orbital-center">
+                        <div class="orbital-ping w-20 h-20"></div>
+                        <div class="orbital-ping w-24 h-24" style="animation-delay: 0.5s"></div>
+                        <div class="w-8 h-8 rounded-full bg-white/80 backdrop-blur-md"></div>
+                    </div>
+                    
+                    <!-- Orbital Rings -->
+                    <div class="orbital-ring w-96 h-96"></div>
+                    <div class="orbital-ring w-80 h-80" style="opacity: 0.2"></div>
+                    <div class="orbital-ring w-64 h-64" style="opacity: 0.3"></div>
+                    
+                    <!-- Video Tools Icons -->
+                    <div class="absolute inset-0 w-96 h-96">
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="relative w-full h-full">
+                                <!-- Animated tool indicators -->
+                                <div class="tool-indicator" style="top: 20%; left: 75%;">
+                                    <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                                </div>
+                                <div class="tool-indicator" style="top: 70%; left: 65%;">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                                </div>
+                                <div class="tool-indicator" style="top: 40%; left: 25%;">
+                                    <div class="w-3 h-3 bg-teal-500 rounded-full animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <canvas class="bg-skin-base pointer-events-none absolute inset-0 mx-auto" id="canvas"></canvas>
+    </section>
+
+    <!-- Enhanced Featured Videos Carousel -->
+    <section id="portfolio" class="featured-section relative py-20 bg-black/90">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Featured Work</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500 mx-auto"></div>
+            </div>
+
+            <div class="carousel-container relative">
+                <div class="carousel-wrapper overflow-hidden">
+                    <div class="carousel-track flex transition-transform duration-500" id="featuredCarousel">
+                        <!-- Videos will be loaded dynamically from JSON data -->
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button class="carousel-btn prev absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white transition-all hover:bg-white/10" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/80 border border-white/20 flex items-center justify-center text-white transition-all hover:bg-white/10" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Pagination Dots -->
+                <div class="flex justify-center mt-6 gap-2" id="carouselPagination"></div>
+            </div>
+
+            <!-- View All Projects Button -->
+            <div class="text-center mt-12">
+                <a href="portfolio.html" class="inline-flex items-center gap-2 px-8 py-3 rounded-md bg-white/5 border border-white/20 text-white hover:bg-white/10 transition-all">
+                    View All Projects
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section id="services" class="services-preview">
+        <div class="container">
+            <h2 class="section-title">What I Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Wedding Videos</h3>
+                    <p>Cinematic storytelling for your special day</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Event Coverage</h3>
+                    <p>Professional event documentation</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Festival Videos</h3>
+                    <p>Capturing cultural celebrations</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="services.html" class="btn btn-outline">View All Services</a>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Bring Your Vision to Life?</h2>
+                <p>Let's create something amazing together</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mohan Kumar</h3>
+                    <p>Professional Video Editor</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mohan Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <video controls id="modalVideo">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Featured Work Modal -->
+    <div class="featured-work-modal" id="featuredWorkModal">
+        <div class="featured-work-modal-content">
+            <button class="featured-work-modal-close" id="featuredWorkModalClose" aria-label="Close video">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe class="featured-work-modal-video" id="featuredWorkModalVideo" frameborder="0" allowfullscreen></iframe>
+            <div class="featured-work-modal-info" id="featuredWorkModalInfo">
+                <h3 class="featured-work-modal-title" id="featuredWorkModalTitle"></h3>
+                <p class="featured-work-modal-category" id="featuredWorkModalCategory"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for interactivity -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/carousel.js"></script>
+    <script src="assets/js/modal.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            let animationFrameId = null;
+
+            let e = 0;
+            const pos = { x: 0, y: 0 };
+            let lines = [];
+            const E = {
+                debug: true,
+                friction: 0.5,
+                trails: 80,
+                size: 50,
+                dampening: 0.025,
+                tension: 0.99,
+            };
+
+            class Node {
+                constructor() {
+                    this.x = 0;
+                    this.y = 0;
+                    this.vy = 0;
+                    this.vx = 0;
+                }
+            }
+
+            class Line {
+                constructor(options) {
+                    this.spring = options.spring + 0.1 * Math.random() - 0.05;
+                    this.friction = E.friction + 0.01 * Math.random() - 0.005;
+                    this.nodes = [];
+                    for (let n = 0; n < E.size; n++) {
+                        const t = new Node();
+                        t.x = pos.x;
+                        t.y = pos.y;
+                        this.nodes.push(t);
+                    }
+                }
+
+                update() {
+                    let spring = this.spring;
+                    const t = this.nodes[0];
+                    t.x = pos.x;
+                    t.y = pos.y;
+                    
+                    for (let i = 0, a = this.nodes.length; i < a; i++) {
+                        const t = this.nodes[i];
+                        if (i > 0) {
+                            const n = this.nodes[i - 1];
+                            t.vx += (n.x - t.x) * spring;
+                            t.vy += (n.y - t.y) * spring;
+                            t.vx += n.vx * E.dampening;
+                            t.vy += n.vy * E.dampening;
+                        }
+                        t.vx *= this.friction;
+                        t.vy *= this.friction;
+                        t.x += t.vx;
+                        t.y += t.vy;
+                        spring *= E.tension;
+                    }
+                }
+
+                draw() {
+                    const startX = this.nodes[0].x;
+                    const startY = this.nodes[0].y;
+                    ctx.beginPath();
+                    ctx.moveTo(startX, startY);
+                    for (let a = 1, o = this.nodes.length - 2; a < o; a++) {
+                        const currentNode = this.nodes[a];
+                        const nextNode = this.nodes[a + 1];
+                        const midX = 0.5 * (currentNode.x + nextNode.x);
+                        const midY = 0.5 * (currentNode.y + nextNode.y);
+                        ctx.quadraticCurveTo(currentNode.x, currentNode.y, midX, midY);
+                    }
+                    const penultimateNode = this.nodes[this.nodes.length - 2];
+                    const lastNode = this.nodes[this.nodes.length - 1];
+                    ctx.quadraticCurveTo(penultimateNode.x, penultimateNode.y, lastNode.x, lastNode.y);
+                    ctx.stroke();
+                    ctx.closePath();
+                }
+            }
+
+            class N {
+                constructor(options) {
+                    this.phase = options.phase || 0;
+                    this.offset = options.offset || 0;
+                    this.frequency = options.frequency || 0.001;
+                    this.amplitude = options.amplitude || 1;
+                }
+                update() {
+                    this.phase += this.frequency;
+                    e = this.offset + Math.sin(this.phase) * this.amplitude;
+                    return e;
+                }
+            }
+
+            const f = new N({
+                phase: Math.random() * 2 * Math.PI,
+                amplitude: 85,
+                frequency: 0.0015,
+                offset: 285,
+            });
+
+            const render = () => {
+                ctx.globalCompositeOperation = "source-over";
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = "lighter";
+                ctx.strokeStyle = `hsla(${Math.round(f.update())},100%,50%,0.025)`;
+                ctx.lineWidth = 10;
+                for (const line of lines) {
+                    line.update();
+                    line.draw();
+                }
+                animationFrameId = window.requestAnimationFrame(render);
+            };
+
+            const handleMousemove = (event) => {
+                pos.x = event.clientX;
+                pos.y = event.clientY;
+            };
+
+            const handleTouchmove = (event) => {
+                if (event.touches.length > 0) {
+                    pos.x = event.touches[0].pageX;
+                    pos.y = event.touches[0].pageY;
+                }
+                event.preventDefault();
+            };
+
+            const handleResize = () => {
+                canvas.width = window.innerWidth - 20;
+                canvas.height = window.innerHeight;
+            };
+
+            const initialize = () => {
+                lines = [];
+                for (let i = 0; i < E.trails; i++) {
+                    lines.push(new Line({ spring: 0.45 + (i / E.trails) * 0.025 }));
+                }
+                handleResize();
+                if (animationFrameId) {
+                    window.cancelAnimationFrame(animationFrameId);
+                }
+                render();
+            };
+
+            document.addEventListener("mousemove", handleMousemove);
+            document.addEventListener("touchmove", handleTouchmove);
+            window.addEventListener("resize", handleResize);
+
+            initialize();
+
+            // Gemini API Logic
+            const promptTextarea = document.getElementById("prompt-textarea");
+            const generateButton = document.getElementById("generate-button");
+            const responseContainer = document.getElementById("response-container");
+            const responseText = document.getElementById("response-text");
+
+            generateButton.addEventListener("click", async () => {
+                const prompt = promptTextarea.value;
+                if (!prompt) return;
+
+                generateButton.disabled = true;
+                generateButton.textContent = "Generating...";
+                responseContainer.classList.add("hidden");
+                responseText.textContent = "";
+
+                const payload = {
+                    contents: [{
+                        parts: [{ text: `You are a creative director and designer. Based on the following project description, generate 3-4 distinct design concepts. For each concept, provide a name, a brief description of the mood/style, a few keywords, and a color palette with hex codes. Project description: ${prompt} Example Output Format: Concept Name: Description: Keywords: Color Palette:` }],
+                    }],
+                    tools: [{ "google_search": {} }],
+                    systemInstruction: {
+                        parts: [{ text: "You are a world-class creative director and design expert. Your goal is to provide concise, inspiring, and actionable design concepts. Always include a color palette with specific hex codes. Focus on modern, professional, and visually appealing ideas." }]
+                    },
+                };
+
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                let retryCount = 0;
+                const maxRetries = 3;
+                const initialDelay = 1000;
+
+                const makeRequest = async () => {
+                    try {
+                        const fetchResponse = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!fetchResponse.ok) {
+                            throw new Error(`HTTP error! status: ${fetchResponse.status}`);
+                        }
+
+                        const result = await fetchResponse.json();
+                        const candidate = result.candidates?.[0];
+                        const generatedText = candidate?.content?.parts?.[0]?.text;
+
+                        if (generatedText) {
+                            responseText.textContent = generatedText;
+                            responseContainer.classList.remove("hidden");
+                        } else {
+                            responseText.textContent = "Sorry, I couldn't generate a response. Please try again.";
+                        }
+
+                    } catch (error) {
+                        if (retryCount < maxRetries) {
+                            retryCount++;
+                            const delay = initialDelay * Math.pow(2, retryCount);
+                            console.log(`Retrying in ${delay}ms... (Attempt ${retryCount + 1})`);
+                            setTimeout(makeRequest, delay);
+                        } else {
+                            console.error("Failed to fetch from API after multiple retries:", error);
+                            responseText.textContent = "Sorry, there was an error connecting to the API. Please try again later.";
+                        }
+                    } finally {
+                        generateButton.disabled = false;
+                        generateButton.textContent = "Generate Ideas ✨";
+                    }
+                };
+
+                makeRequest();
+            });
+        });
+
+        // Featured Work functionality for index page
+        let featuredWorkData = [];
+        
+        async function loadFeaturedWorkData() {
+            try {
+                const response = await fetch('videos-data.json');
+                if (response.ok) {
+                    featuredWorkData = await response.json();
+                    console.log('Loaded featured work data:', featuredWorkData);
+                } else {
+                    throw new Error('JSON file not found');
+                }
+            } catch (error) {
+                console.warn('Could not load from JSON file, using fallback data:', error.message);
+                // Fallback data
+                featuredWorkData = [
+                    {
+                        title: "Naga Swaram Event.mp4",
+                        driveLink: "https://drive.google.com/file/d/18-TOnOIbG_kxLLRgo1H-lXTQYSTyh9WT/view?usp=sharing",
+                        thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=450&fit=crop&crop=center"
+                    },
+                    {
+                        title: "Ganesh Fest Teaser.mp4",
+                        driveLink: "https://drive.google.com/file/d/1cU4jM8vEfZuK9YsJ5Hny0vHPjjTYB4a5/view?usp=sharing",
+                        thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=450&fit=crop&crop=center"
+                    },
+                    {
+                        title: "Ankish & Rutali Teaser.mp4",
+                        driveLink: "https://drive.google.com/file/d/1hTduq4MczgWXYOI6bJMaeK7kiP52_nkb/view?usp=sharing",
+                        thumbnail: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=450&fit=crop&crop=center"
+                    },
+                    {
+                        title: "House Warming Teaser.mp4",
+                        driveLink: "https://drive.google.com/file/d/1QegTu3_e3FVs7RAqYMjDBUaFb_UyJT_M/view?usp=sharing",
+                        thumbnail: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=450&fit=crop&crop=center"
+                    },
+                    {
+                        title: "Bride & Groom Arrivals.mp4",
+                        driveLink: "https://drive.google.com/file/d/1oqb89B8AOIZrU-qw7VlFAbRy8nnrGaSh/view?usp=sharing",
+                        thumbnail: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=450&fit=crop&crop=center"
+                    },
+                    {
+                        title: "Pellikuturu.mp4",
+                        driveLink: "https://drive.google.com/file/d/1VPW2zH6gmcPhM4XVpSulA3js4rOAwoGi/view?usp=sharing",
+                        thumbnail: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&h=450&fit=crop&crop=center"
+                    },
+                    {
+                        title: "Pellikoduku.mp4",
+                        driveLink: "https://drive.google.com/file/d/1BhiulU3Jxs45w66rZAp8bm-MNcBlAbDf/view?usp=sharing",
+                        thumbnail: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&h=450&fit=crop&crop=center"
+                    }
+                ];
+            }
+             renderFeaturedCarousel();
+         }
+
+        function getCleanTitle(title) {
+            return title.replace(/\.(mp4|mov|avi|mkv|webm)$/i, '');
+        }
+
+        function extractFileId(driveLink) {
+            const patterns = [
+                /\/file\/d\/([a-zA-Z0-9-_]+)/,
+                /id=([a-zA-Z0-9-_]+)/,
+                /\/d\/([a-zA-Z0-9-_]+)/
+            ];
+            
+            for (const pattern of patterns) {
+                const match = driveLink.match(pattern);
+                if (match) {
+                    return match[1];
+                }
+            }
+            return null;
+        }
+
+        function convertToEmbedUrl(driveLink) {
+            const fileId = extractFileId(driveLink);
+            if (!fileId) {
+                return null;
+            }
+            return `https://drive.google.com/file/d/${fileId}/preview`;
+        }
+
+         function renderFeaturedCarousel() {
+             const carousel = document.getElementById('featuredCarousel');
+             if (!carousel || !featuredWorkData.length) {
+                 carousel.innerHTML = '<p style="text-align: center; color: #b3b3b3;">No videos available</p>';
+                 return;
+             }
+
+             // Show only first 4 videos in carousel
+             const displayVideos = featuredWorkData.slice(0, 4);
+
+             carousel.innerHTML = displayVideos.map((video, index) => {
+                 const cleanTitle = getCleanTitle(video.title);
+                 const category = getVideoCategory(video.title);
+                 
+                 return `
+                     <div class="carousel-slide">
+                         <div class="video-card" 
+                              data-drive-link="${video.driveLink}" 
+                              data-title="${cleanTitle}">
+                             <div class="video-thumbnail">
+                                 <img src="${video.thumbnail}" 
+                                      alt="${cleanTitle}" 
+                                      loading="lazy">
+                                 <div class="play-overlay">
+                                     <i class="fas fa-play"></i>
+                                 </div>
+                             </div>
+                             <div class="video-info">
+                                 <h3>${cleanTitle}</h3>
+                                 <p>${getVideoDescription(category)}</p>
+                             </div>
+                         </div>
+                     </div>
+                 `;
+             }).join('');
+
+             // Add click handlers for carousel videos
+             const carouselCards = document.querySelectorAll('#featuredCarousel .video-card');
+             carouselCards.forEach(card => {
+                 card.addEventListener('click', function() {
+                     const driveLink = this.dataset.driveLink;
+                     const title = this.dataset.title;
+                     const embedUrl = convertToEmbedUrl(driveLink);
+                     
+                     if (embedUrl) {
+                         openFeaturedWorkModal(embedUrl, title);
+                     } else {
+                         console.error('Could not convert Google Drive link to embed URL:', driveLink);
+                         alert('Error: Could not load video. Please check the Google Drive link.');
+                     }
+                 });
+             });
+         }
+
+         function getVideoCategory(title) {
+             const lowerTitle = title.toLowerCase();
+             if (lowerTitle.includes('wedding') || lowerTitle.includes('bride') || lowerTitle.includes('groom') || 
+                 lowerTitle.includes('ankish') || lowerTitle.includes('rutali') || lowerTitle.includes('pellikuturu') || 
+                 lowerTitle.includes('pellikoduku')) {
+                 return 'weddings';
+             } else if (lowerTitle.includes('festival') || lowerTitle.includes('ganesh') || lowerTitle.includes('fest')) {
+                 return 'festivals';
+             } else if (lowerTitle.includes('event') || lowerTitle.includes('naga') || lowerTitle.includes('swaram')) {
+                 return 'events';
+             } else if (lowerTitle.includes('house') || lowerTitle.includes('warming') || lowerTitle.includes('special')) {
+                 return 'special';
+             }
+             return 'events'; // default category
+         }
+
+         function getVideoDescription(category) {
+             const descriptions = {
+                 'weddings': 'Cinematic Wedding Storytelling',
+                 'festivals': 'Festival Celebration',
+                 'events': 'Professional Event Coverage',
+                 'special': 'Special Occasion'
+             };
+             return descriptions[category] || 'Professional Video Editing';
+         }
+
+        function openFeaturedWorkModal(embedUrl, title) {
+            const modal = document.getElementById('featuredWorkModal');
+            const modalVideo = document.getElementById('featuredWorkModalVideo');
+            const modalTitle = document.getElementById('featuredWorkModalTitle');
+            const modalCategory = document.getElementById('featuredWorkModalCategory');
+            
+            if (modal && modalVideo && modalTitle) {
+                modalVideo.src = embedUrl;
+                modalTitle.textContent = title;
+                modalCategory.textContent = 'Video';
+                
+                modal.style.display = 'flex';
+                requestAnimationFrame(() => {
+                    modal.classList.add('active');
+                });
+                
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeFeaturedWorkModal() {
+            const modal = document.getElementById('featuredWorkModal');
+            const modalVideo = document.getElementById('featuredWorkModalVideo');
+            
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    if (modalVideo) {
+                        modalVideo.src = '';
+                    }
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFeaturedWorkData();
+            
+            // Add modal close handlers
+            const modalClose = document.getElementById('featuredWorkModalClose');
+            const modal = document.getElementById('featuredWorkModal');
+            
+            if (modalClose) {
+                modalClose.addEventListener('click', closeFeaturedWorkModal);
+            }
+            
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeFeaturedWorkModal();
+                    }
+                });
+            }
+            
+            // Escape key handler
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                    closeFeaturedWorkModal();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            const navItems = document.querySelectorAll('.nav-item');
+            const lamp = document.getElementById('lamp');
+            
+            function setActiveTab(activeItem) {
+                // Remove active class from all items and reset styles
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    item.style.color = 'var(--nav-text-color)';
+                });
+
+                // Add active class to the clicked item and set active styles
+                activeItem.classList.add('active');
+                activeItem.style.color = 'var(--nav-active-text)';
+
+                // Move the lamp
+                const itemRect = activeItem.getBoundingClientRect();
+                const navRect = activeItem.parentElement.getBoundingClientRect();
+
+                lamp.style.left = `${itemRect.left - navRect.left}px`;
+                lamp.style.width = `${itemRect.width}px`;
+            }
+
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Smooth scroll for anchor links
+                    const targetId = item.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                         e.preventDefault();
+                         targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setActiveTab(item);
+                });
+                
+                // Hover effect
+                item.addEventListener('mouseenter', () => {
+                    if (!item.classList.contains('active')) {
+                        item.style.color = 'var(--nav-text-hover)';
+                    }
+                });
+                item.addEventListener('mouseleave', () => {
+                    if (!item.classList.contains('active')) {
+                         item.style.color = 'var(--nav-text-color)';
+                    }
+                });
+            });
+
+            // Set initial active state
+            const initialActiveItem = document.querySelector('.nav-item.active');
+            if (initialActiveItem) {
+                // Use a small timeout to ensure layout is calculated before positioning the lamp
+                setTimeout(() => {
+                    setActiveTab(initialActiveItem);
+                }, 50);
+            }
+        });
+    </script>
+</body>
+</html>
+

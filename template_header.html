@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohan Kumar - Professional Video Editor</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/orbital-hero.css">
+    <link rel="stylesheet" href="assets/css/carousel.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/mobile-nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/mobile-nav.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+
+        /* Enhanced Tubelight Navbar Styles */
+        #tubelight-nav-container {
+            --nav-primary-color: #a855f7;
+            --nav-primary-glow-1: rgba(168, 85, 247, 0.2);
+            --nav-primary-glow-2: rgba(168, 85, 247, 0.15);
+            --nav-primary-glow-3: rgba(168, 85, 247, 0.1);
+            --nav-text-color: #a0a0a0;
+            --nav-text-hover: #ffffff;
+            --nav-bg: rgba(0, 0, 0, 0.8);
+            --nav-border: rgba(255, 255, 255, 0.2);
+            --nav-active-bg: rgba(168, 85, 247, 0.1);
+            --nav-active-text: #ffffff;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        #tubelight-nav-container nav {
+            z-index: 1000;
+        }
+
+        #lamp {
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(to right, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2), rgba(20, 184, 166, 0.2));
+        }
+
+        /* Modern gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #14b8a6 100%);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #a855f7, #3b82f6, #14b8a6);
+        }
+
+        /* Card and section styles */
+        .card-gradient {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Enhanced Tubelight Navigation -->
+    <nav id="tubelight-nav-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100]">
+        <div id="nav-wrapper" class="relative flex items-center gap-2 border rounded-full shadow-lg p-1.5 px-2" style="background-color: var(--nav-bg); border-color: var(--nav-border);">
+            <div id="lamp" class="absolute inset-0 h-full rounded-full -z-10">
+                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full" style="background: linear-gradient(to right, #a855f7, #3b82f6, #14b8a6);">
+                    <div class="absolute w-12 h-6 rounded-full -top-2 -left-2" style="background-color: var(--nav-primary-glow-1); filter: blur(12px);"></div>
+                    <div class="absolute w-8 h-6 rounded-full -top-1" style="background-color: var(--nav-primary-glow-2); filter: blur(8px);"></div>
+                    <div class="absolute w-4 h-4 rounded-full top-0 left-2" style="background-color: var(--nav-primary-glow-3); filter: blur(4px);"></div>
+                </div>
+            </div>
+            <a href="index.html#home" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Home">
+                <i data-lucide="home" class="w-4 h-4"></i>
+                <span>Home</span>
+            </a>
+            <a href="portfolio.html" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Portfolio">
+                <i data-lucide="briefcase" class="w-4 h-4"></i>
+                <span>Portfolio</span>
+            </a>
+            <a href="services.html" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Services">
+                <i data-lucide="wrench" class="w-4 h-4"></i>
+                <span>Services</span>
+            </a>
+            <a href="contact.html" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Contact">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>

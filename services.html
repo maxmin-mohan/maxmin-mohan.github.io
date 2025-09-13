@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Mohan Kumar Video Editor</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/carousel.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/mobile-nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/mobile-nav.js"></script>
+    <style>
+        :root {
+            --color-background: #000000;
+            --color-surface: #121212;
+            --color-accent: #007AFF;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: rgba(255, 255, 255, 0.7);
+            --color-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+        }
+
+        h1, h2, h3, h4, .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cinematic-container {
+            aspect-ratio: 2.35/1;
+            position: relative;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .cinematic-bars::before,
+        .cinematic-bars::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background-color: #000;
+            z-index: 10;
+        }
+
+        .cinematic-bars::before {
+            top: 0;
+        }
+
+        .cinematic-bars::after {
+            bottom: 0;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enhanced Tubelight Navbar Styles */
+        #tubelight-nav-container {
+            --nav-primary-color: #a855f7;
+            --nav-primary-glow-1: rgba(168, 85, 247, 0.2);
+            --nav-primary-glow-2: rgba(168, 85, 247, 0.15);
+            --nav-primary-glow-3: rgba(168, 85, 247, 0.1);
+            --nav-text-color: #a0a0a0;
+            --nav-text-hover: #ffffff;
+            --nav-bg: rgba(0, 0, 0, 0.8);
+            --nav-border: rgba(255, 255, 255, 0.2);
+            --nav-active-bg: rgba(168, 85, 247, 0.1);
+            --nav-active-text: #ffffff;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        #tubelight-nav-container nav {
+            z-index: 1000;
+        }
+
+        #lamp {
+            transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(to right, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2), rgba(20, 184, 166, 0.2));
+        }
+
+        /* Modern gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #14b8a6 100%);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #a855f7, #3b82f6, #14b8a6);
+        }
+
+        /* Cinematic Card Styles */
+        .card-gradient {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+        }
+
+        .btn-quote {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--color-text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-quote:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Enhanced Tubelight Navigation -->
+    <nav id="tubelight-nav-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-[100]">
+        <div id="nav-wrapper" class="relative flex items-center gap-2 border rounded-full shadow-lg p-1.5 px-2" style="background-color: var(--nav-bg); border-color: var(--nav-border);">
+            <div id="lamp" class="absolute inset-0 h-full rounded-full -z-10">
+                <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full" style="background: linear-gradient(to right, #a855f7, #3b82f6, #14b8a6);">
+                    <div class="absolute w-12 h-6 rounded-full -top-2 -left-2" style="background-color: var(--nav-primary-glow-1); filter: blur(12px);"></div>
+                    <div class="absolute w-8 h-6 rounded-full -top-1" style="background-color: var(--nav-primary-glow-2); filter: blur(8px);"></div>
+                    <div class="absolute w-4 h-4 rounded-full top-0 left-2" style="background-color: var(--nav-primary-glow-3); filter: blur(4px);"></div>
+                </div>
+            </div>
+            <a href="index.html" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Home">
+                <i data-lucide="home" class="w-4 h-4"></i>
+                <span>Home</span>
+            </a>
+            <a href="portfolio.html" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Portfolio">
+                <i data-lucide="briefcase" class="w-4 h-4"></i>
+                <span>Portfolio</span>
+            </a>
+            <a href="services.html" class="nav-item active px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Services">
+                <i data-lucide="wrench" class="w-4 h-4"></i>
+                <span>Services</span>
+            </a>
+            <a href="contact.html" class="nav-item px-6 py-2.5 text-sm font-medium rounded-full cursor-pointer transition-all hover:text-white flex items-center gap-2" data-name="Contact">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Cinematic Services Hero -->
+    <section class="relative min-h-screen flex items-center justify-center cinematic-bars overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-60 z-10"></div>
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-screens-showing-different-videos-21804-large.mp4" type="video/mp4">
+        </video>
+        <div class="relative z-20 container mx-auto px-4 max-w-7xl text-center">
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 text-white tracking-tight fade-in">
+                Cinematic <br>
+                <span class="text-[var(--color-accent)]">Services</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed fade-in" style="animation-delay: 0.2s">
+                Crafting compelling narratives through professional video editing, 
+                where every frame tells a story and every cut creates emotion
+            </p>
+            <div class="mt-12 fade-in" style="animation-delay: 0.4s">
+                <a href="#services-grid" class="inline-flex items-center gap-3 text-white/60 hover:text-white transition-colors">
+                    <span>Explore Services</span>
+                    <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services-grid" class="py-20 bg-[var(--color-background)]">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional Editing Services</h2>
+                <div class="w-16 h-0.5 bg-[var(--color-accent)] mx-auto opacity-60"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="service-card fade-in" style="animation-delay: 0.1s">
+                    <h3 class="text-xl font-bold mb-3">Wedding Films</h3>
+                    <p class="text-white/70 mb-4">Professional cinematic storytelling for your special day.</p>
+                    <div class="service-price mb-4">From ₹15,000</div>
+                    <a href="contact.html" class="btn-quote inline-block">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in" style="animation-delay: 0.2s">
+                    <h3 class="text-xl font-bold mb-3">Event Coverage</h3>
+                    <p class="text-white/70 mb-4">Dynamic event documentation with professional polish.</p>
+                    <div class="service-price mb-4">From ₹8,000</div>
+                    <a href="contact.html" class="btn-quote inline-block">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in" style="animation-delay: 0.3s">
+                    <h3 class="text-xl font-bold mb-3">Festival Videos</h3>
+                    <p class="text-white/70 mb-4">Capturing cultural celebrations with artistic flair.</p>
+                    <div class="service-price mb-4">From ₹10,000</div>
+                    <a href="contact.html" class="btn-quote inline-block">Get Quote</a>
+                </div>
+
+                <div class="service-card fade-in" style="animation-delay: 0.4s">
+                    <h3 class="text-xl font-bold mb-3">Corporate Films</h3>
+                    <p class="text-white/70 mb-4">Professional business presentations and promotional content.</p>
+                    <div class="service-price mb-4">From ₹12,000</div>
+                    <a href="contact.html" class="btn-quote inline-block">Get Quote</a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cinematic Process Section -->
+    <section class="py-32 bg-[var(--color-surface)]">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">The Creative Process</h2>
+                <div class="w-24 h-0.5 bg-[var(--color-accent)] mx-auto"></div>
+            </div>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-border)]"></div>
+                
+                <!-- Process Steps -->
+                <div class="space-y-24">
+                    <!-- Step 1 -->
+                    <div class="relative grid grid-cols-2 gap-8 items-center fade-in">
+                        <div class="text-right pr-16">
+                            <h3 class="text-3xl font-bold mb-4">01. Vision</h3>
+                            <p class="text-white/70 text-lg">Initial consultation to understand your story, style preferences, and project goals.</p>
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center">
+                            <i data-lucide="eye" class="w-6 h-6"></i>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative grid grid-cols-2 gap-8 items-center fade-in" style="animation-delay: 0.2s">
+                        <div></div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center">
+                            <i data-lucide="pen-tool" class="w-6 h-6"></i>
+                        </div>
+                        <div class="pl-16">
+                            <h3 class="text-3xl font-bold mb-4">02. Planning</h3>
+                            <p class="text-white/70 text-lg">Crafting a detailed editing strategy, including style guides and timing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative grid grid-cols-2 gap-8 items-center fade-in" style="animation-delay: 0.4s">
+                        <div class="text-right pr-16">
+                            <h3 class="text-3xl font-bold mb-4">03. Creation</h3>
+                            <p class="text-white/70 text-lg">Professional editing with precision color grading and sound design.</p>
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center">
+                            <i data-lucide="video" class="w-6 h-6"></i>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative grid grid-cols-2 gap-8 items-center fade-in" style="animation-delay: 0.6s">
+                        <div></div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center">
+                            <i data-lucide="check-circle" class="w-6 h-6"></i>
+                        </div>
+                        <div class="pl-16">
+                            <h3 class="text-3xl font-bold mb-4">04. Delivery</h3>
+                            <p class="text-white/70 text-lg">Final delivery with revisions and multiple format options.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technology -->
+    <section class="bg-black/30 py-20">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Tools & Technology</h2>
+                <p class="text-lg text-white/60 max-w-2xl mx-auto">
+                    Using industry-standard software and cutting-edge technology to deliver exceptional results
+                </p>
+                <div class="w-20 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-teal-500 mx-auto mt-8"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Adobe Premiere Pro -->
+                <div class="card-gradient rounded-xl p-6 hover:scale-105 transition-transform">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://www.adobe.com/content/dam/acom/one-console/icons_rebrand/pr_appicon.svg" 
+                             alt="Premiere Pro" 
+                             class="w-16 h-16">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Adobe Premiere Pro</h3>
+                            <p class="text-white/60 mb-4">Professional video editing & post-production</p>
+                            <ul class="text-sm text-white/80 space-y-2">
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-purple-500 mr-2"></i>
+                                    Advanced timeline editing
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-purple-500 mr-2"></i>
+                                    Multi-camera sequences
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-purple-500 mr-2"></i>
+                                    Motion graphics integration
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- After Effects -->
+                <div class="card-gradient rounded-xl p-6 hover:scale-105 transition-transform">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://www.adobe.com/content/dam/cc/us/en/products/ccoverview/ae_cc_app_RGB.svg" 
+                             alt="After Effects" 
+                             class="w-16 h-16">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Adobe After Effects</h3>
+                            <p class="text-white/60 mb-4">Visual effects & motion graphics</p>
+                            <ul class="text-sm text-white/80 space-y-2">
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>
+                                    Custom animations
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>
+                                    Visual effects compositing
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>
+                                    Title & logo animations
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DaVinci Resolve -->
+                <div class="card-gradient rounded-xl p-6 hover:scale-105 transition-transform">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/DaVinci_Resolve_17_logo.svg" 
+                             alt="DaVinci Resolve" 
+                             class="w-16 h-16">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">DaVinci Resolve</h3>
+                            <p class="text-white/60 mb-4">Professional color grading</p>
+                            <ul class="text-sm text-white/80 space-y-2">
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-teal-500 mr-2"></i>
+                                    Advanced color correction
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-teal-500 mr-2"></i>
+                                    HDR workflow support
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-teal-500 mr-2"></i>
+                                    Film look emulation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adobe Photoshop -->
+                <div class="card-gradient rounded-xl p-6 hover:scale-105 transition-transform">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://www.adobe.com/content/dam/acom/one-console/icons_rebrand/ps_appicon.svg" 
+                             alt="Adobe Photoshop" 
+                             class="w-16 h-16">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Adobe Photoshop</h3>
+                            <p class="text-white/60 mb-4">Graphics & thumbnail creation</p>
+                            <ul class="text-sm text-white/80 space-y-2">
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>
+                                    Custom graphics
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>
+                                    Thumbnail design
+                                </li>
+                                <li class="flex items-center">
+                                    <i data-lucide="check" class="w-4 h-4 text-blue-500 mr-2"></i>
+                                    Image enhancement
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's discuss your video editing needs and create something amazing together</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mohan Kumar</h3>
+                    <p>Professional Video Editor</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mohan Kumar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
